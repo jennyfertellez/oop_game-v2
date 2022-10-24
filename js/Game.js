@@ -75,7 +75,7 @@ removeLife(){
     } else {
         this.gameOver(false);
     }
-};
+}
 
 // Display game over message
 // @param (boolean) gameWon - Whether or not the user won the game 
@@ -91,13 +91,16 @@ gameOver(gameWon){
         gameOverMessage.innerHTML = 'You almost had it! Try again.';
         overlay.className = 'lose';
     }
-}
 
-resetGame(){
+    startButton.addEventListener('click', () => {
+        this.resetGame();
+        game = new Game();
+        game.startGame();
+})}
+
+resetGame = ()=> {
     const liPhrase = document.querySelector('#phrase ul')
     liPhrase.innerHTML = '';
-
-    this.missed = 0;
 
     let keys = document.querySelectorAll('.key');
     keys.forEach(key => {
@@ -109,5 +112,4 @@ resetGame(){
     for (let i = 0; i < hearts.length; i++) {
         hearts[i].src = 'images/liveHeart.png';
     }
-}
-};
+}};

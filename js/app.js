@@ -11,8 +11,8 @@ let game = '';
 // Initiates Game class
 const startButton = document.getElementById('btn__reset');
     startButton.addEventListener('click', () => {
-       game = new Game();
-       game.startGame();
+        game = new Game();
+        game.startGame();
     });
 
 /**
